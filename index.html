@@ -1,105 +1,223 @@
 <!DOCTYPE html>
-<html lang="es">
+<html class="dark" lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jefferson Zambrano — DevOps & Software Developer</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Geist:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <title>Jefferson Zambrano Chung — DevOps & Software Developer</title>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-tertiary-fixed-variant": "#3f465c",
+            "outline-variant": "#464554",
+            "surface-dim": "#0c1324",
+            "surface-container-high": "#23293c",
+            "tertiary-fixed": "#dae2fd",
+            "secondary-container": "#3e495d",
+            "background": "#0c1324",
+            "surface-container": "#191f31",
+            "error-container": "#93000a",
+            "on-tertiary": "#283044",
+            "on-primary-fixed": "#07006c",
+            "primary-fixed-dim": "#c0c1ff",
+            "on-error-container": "#ffdad6",
+            "inverse-on-surface": "#2a3043",
+            "inverse-surface": "#dce1fb",
+            "primary-fixed": "#e1e0ff",
+            "on-surface-variant": "#c7c4d7",
+            "inverse-primary": "#494bd6",
+            "on-primary-fixed-variant": "#2f2ebe",
+            "on-secondary-fixed-variant": "#3c475a",
+            "error": "#ffb4ab",
+            "primary": "#c0c1ff",
+            "tertiary": "#bec6e0",
+            "secondary-fixed": "#d8e3fb",
+            "surface-container-lowest": "#070d1f",
+            "tertiary-fixed-dim": "#bec6e0",
+            "primary-container": "#8083ff",
+            "surface-container-low": "#151b2d",
+            "on-surface": "#dce1fb",
+            "secondary": "#bcc7de",
+            "on-primary-container": "#0d0096",
+            "on-secondary": "#263143",
+            "surface-tint": "#c0c1ff",
+            "surface-bright": "#33394c",
+            "on-background": "#dce1fb",
+            "surface-variant": "#2e3447",
+            "on-tertiary-fixed": "#131b2e",
+            "secondary-fixed-dim": "#bcc7de",
+            "on-secondary-container": "#aeb9d0",
+            "surface-container-highest": "#2e3447",
+            "on-secondary-fixed": "#111c2d",
+            "tertiary-container": "#8990a8",
+            "on-primary": "#1000a9",
+            "outline": "#908fa0",
+            "surface": "#0c1324",
+            "on-error": "#690005",
+            "on-tertiary-container": "#22293d"
+          },
+          borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", "2xl": "1rem", full: "9999px" },
+          fontFamily: {
+            "headline": ["Sora"],
+            "body": ["Geist"],
+            "mono": ["JetBrains Mono"]
+          },
+          fontSize: {
+            "headline-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.1em", fontWeight: "500" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #0c1324; color: #dce1fb; font-family: 'Geist', sans-serif; }
+    .neo-raised { box-shadow: 6px 6px 12px #000000, -6px -6px 12px #1E293B; }
+    .neo-sunken { box-shadow: inset 4px 4px 8px #000000, inset -4px -4px 8px #1E293B; }
+    .neo-card { background-color: #191f31; box-shadow: 8px 8px 16px #000000, -4px -4px 12px #1E293B; }
+    .neo-card-hover:hover { box-shadow: 10px 10px 20px #000000, -6px -6px 14px #1E293B; transform: translateY(-2px); }
+    .glow-primary { filter: drop-shadow(0 0 8px rgba(192, 193, 255, 0.3)); }
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .gradient-text {
+      background: linear-gradient(135deg, #c0c1ff, #8083ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .chip {
+      background: #2e3447;
+      box-shadow: inset 2px 2px 4px #000000, inset -2px -2px 4px #1E293B;
+    }
+    .timeline-line {
+      background: linear-gradient(to bottom, #c0c1ff, #8083ff80);
+    }
+    .avatar-glow { box-shadow: 0 0 30px rgba(192, 193, 255, 0.2); }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(192, 193, 255, 0.4); }
+      50% { opacity: 0.6; box-shadow: 0 0 0 8px rgba(192, 193, 255, 0); }
+    }
+    .status-dot { animation: pulse-dot 2s infinite; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-up { animation: fadeUp 0.5s ease both; }
+  </style>
 </head>
 <body>
 
-  <!-- ===== PARTICLE BACKGROUND ===== -->
-  <canvas id="particles"></canvas>
-
   <!-- ===== NAVBAR ===== -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo">JZ<span class="accent-dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about" class="nav-link">Perfil</a></li>
-        <li><a href="#experience" class="nav-link">Experiencia</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
-        <li><a href="#education" class="nav-link">Formación</a></li>
-        <li><a href="#contact" class="nav-link">Contacto</a></li>
-      </ul>
-      <button id="themeToggle" aria-label="Toggle theme">🌙</button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+  <header class="w-full sticky top-0 z-50 bg-surface neo-raised flex justify-between items-center px-6 md:px-16 py-4">
+    <div class="flex items-center gap-8">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl neo-sunken flex items-center justify-center">
+          <span class="material-symbols-outlined text-primary" data-icon="code">code</span>
+        </div>
+        <h1 class="font-headline text-lg md:text-xl font-bold text-primary">JZ<span class="text-on-surface-variant">.</span></h1>
+      </div>
     </div>
-  </nav>
+    <div class="hidden md:flex items-center gap-6">
+      <a href="#about" class="text-body-sm text-on-surface-variant hover:text-primary transition-colors">Perfil</a>
+      <a href="#experience" class="text-body-sm text-on-surface-variant hover:text-primary transition-colors">Experiencia</a>
+      <a href="#skills" class="text-body-sm text-on-surface-variant hover:text-primary transition-colors">Skills</a>
+      <a href="#education" class="text-body-sm text-on-surface-variant hover:text-primary transition-colors">Formación</a>
+      <a href="#contact" class="text-body-sm text-on-surface-variant hover:text-primary transition-colors">Contacto</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl neo-sunken flex items-center justify-center text-on-surface-variant cursor-pointer hover:text-primary transition-colors" id="themeToggle">
+        <span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+      </div>
+      <div class="md:hidden w-9 h-9 rounded-xl neo-sunken flex items-center justify-center text-on-surface-variant cursor-pointer" id="menuToggle">
+        <span class="material-symbols-outlined" data-icon="menu">menu</span>
+      </div>
+    </div>
+  </header>
 
   <!-- ===== MOBILE MENU ===== -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#about" class="mobile-link">Perfil</a></li>
-      <li><a href="#experience" class="mobile-link">Experiencia</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#education" class="mobile-link">Formación</a></li>
-      <li><a href="#contact" class="mobile-link">Contacto</a></li>
-    </ul>
+  <div class="hidden fixed inset-0 z-40 bg-surface/95 backdrop-blur flex-col items-center justify-center gap-8" id="mobileMenu">
+    <a href="#about" class="text-headline-sm text-on-surface-variant hover:text-primary font-headline">Perfil</a>
+    <a href="#experience" class="text-headline-sm text-on-surface-variant hover:text-primary font-headline">Experiencia</a>
+    <a href="#skills" class="text-headline-sm text-on-surface-variant hover:text-primary font-headline">Skills</a>
+    <a href="#education" class="text-headline-sm text-on-surface-variant hover:text-primary font-headline">Formación</a>
+    <a href="#contact" class="text-headline-sm text-on-surface-variant hover:text-primary font-headline">Contacto</a>
   </div>
 
   <!-- ===== HERO ===== -->
-  <section id="hero">
-    <div class="hero-content">
-      <div class="hero-badge">Disponible para oportunidades</div>
-      <h1 class="hero-title">
-        Jefferson Alexander<br />
+  <section class="min-h-[90vh] flex items-center justify-center px-6 md:px-16 pt-8 pb-4 relative">
+    <div class="text-center max-w-4xl">
+      <div class="inline-flex items-center gap-2 neo-sunken px-4 py-2 rounded-full mb-8 fade-up">
+        <span class="w-2 h-2 rounded-full bg-green-400 status-dot"></span>
+        <span class="text-label-sm text-on-surface-variant">Disponible para oportunidades</span>
+      </div>
+      <h1 class="font-headline text-headline-lg md:text-6xl lg:text-7xl leading-tight mb-6 fade-up" style="animation-delay: 0.1s;">
+        Jefferson Alexander<br/>
         <span class="gradient-text">Zambrano Chung</span>
       </h1>
-      <p class="hero-subtitle">
-        Desarrollador de Software · <span class="highlight">Enfoque DevOps</span>
+      <p class="text-body-lg text-on-surface-variant mb-10 fade-up" style="animation-delay: 0.2s;">
+        Desarrollador de Software · <span class="text-primary font-semibold">Enfoque DevOps</span>
       </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn primary">Contáctame</a>
-        <a href="#experience" class="btn outline">Ver experiencia</a>
+      <div class="flex flex-wrap gap-4 justify-center mb-12 fade-up" style="animation-delay: 0.3s;">
+        <a href="#contact" class="neo-raised px-8 py-4 rounded-xl font-headline font-semibold text-sm bg-primary text-on-primary glow-primary hover:scale-[1.02] transition-transform flex items-center gap-2">
+          <span class="material-symbols-outlined" data-icon="mail">mail</span>
+          Contáctame
+        </a>
+        <a href="#experience" class="neo-raised px-8 py-4 rounded-xl font-headline font-semibold text-sm text-on-surface hover:text-primary transition-all flex items-center gap-2">
+          <span class="material-symbols-outlined" data-icon="history">history</span>
+          Ver experiencia
+        </a>
       </div>
-      <div class="hero-stats">
-        <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Años creando</span></div>
-        <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Tecnologías</span></div>
-        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Proyectos</span></div>
+      <div class="flex gap-8 md:gap-16 justify-center fade-up" style="animation-delay: 0.4s;">
+        <div><span class="font-headline text-3xl md:text-4xl font-bold text-primary">3+</span><p class="text-label-sm text-on-surface-variant mt-1">Años creando</p></div>
+        <div><span class="font-headline text-3xl md:text-4xl font-bold text-primary">15+</span><p class="text-label-sm text-on-surface-variant mt-1">Tecnologías</p></div>
+        <div><span class="font-headline text-3xl md:text-4xl font-bold text-primary">10+</span><p class="text-label-sm text-on-surface-variant mt-1">Proyectos</p></div>
       </div>
-    </div>
-    <div class="scroll-indicator">
-      <span>Desliza</span>
-      <div class="mouse"><div class="wheel"></div></div>
     </div>
   </section>
 
-  <!-- ===== ABOUT / PROFILE ===== -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">Sobre mí</h2>
-      <div class="about-wrapper">
-        <div class="about-avatar">
-          <div class="avatar-placeholder">JZ</div>
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="px-6 md:px-16 py-16 md:py-24">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+        <h2 class="font-headline text-headline-md text-primary">Sobre mí</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
+      </div>
+      <div class="grid md:grid-cols-[200px_1fr] gap-8 items-start">
+        <div class="flex justify-center">
+          <div class="w-40 h-40 rounded-2xl neo-raised avatar-glow flex items-center justify-center bg-surface-container-high">
+            <span class="font-headline text-5xl font-bold gradient-text">JZ</span>
+          </div>
         </div>
-        <div class="about-text">
-          <p>
-            <strong>Bachiller Técnico en Desarrollo de Software</strong> y actual estudiante de 
-            <strong>Ingeniería de Software</strong>. Me apasiona la cultura <strong>DevOps</strong>, 
-            la automatización de procesos y el uso de herramientas en la nube.
+        <div class="space-y-4">
+          <p class="text-body-md text-on-surface-variant">
+            <strong class="text-on-surface">Bachiller Técnico en Desarrollo de Software</strong> y actual estudiante de 
+            <strong class="text-on-surface">Ingeniería de Software</strong>. Apasionado por la cultura 
+            <strong class="text-primary">DevOps</strong>, la automatización de procesos y las herramientas en la nube.
           </p>
-          <p>
-            Tengo experiencia construyendo sistemas <strong>CRUD</strong>, automatizando flujos, 
-            creando <strong>chatbots con IA</strong> y consumiendo servicios web <strong>REST y SOAP</strong>. 
-            Manejo tecnologías modernas como <strong>Spring Boot, Python, Azure, Docker y Kubernetes</strong>.
+          <p class="text-body-md text-on-surface-variant">
+            Experiencia construyendo sistemas <strong class="text-on-surface">CRUD</strong>, automatizando flujos, 
+            creando <strong class="text-on-surface">chatbots con IA</strong> y consumiendo servicios web 
+            <strong class="text-on-surface">REST y SOAP</strong>. Manejo <strong class="text-on-surface">Spring Boot, Python, Azure, Docker y Kubernetes</strong>.
           </p>
-          <p>
-            Me caracterizo por mi <strong>adaptabilidad</strong>, <strong>aprendizaje constante</strong> 
-            y mentalidad colaborativa. Busco crecer como <strong>DevOps Engineer</strong> en una empresa 
-            que valore la innovación y la mejora continua.
+          <p class="text-body-md text-on-surface-variant">
+            Me caracterizo por mi adaptabilidad, aprendizaje constante y mentalidad colaborativa. Busco crecer como 
+            <strong class="text-primary">DevOps Engineer</strong> en una empresa que valore la innovación y la mejora continua.
           </p>
-          <div class="about-tags">
-            <span>#DevOps</span>
-            <span>#Cloud</span>
-            <span>#Automation</span>
-            <span>#Java</span>
-            <span>#Python</span>
-            <span>#Kubernetes</span>
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#DevOps</span>
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#Cloud</span>
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#Automation</span>
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#Java</span>
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#Python</span>
+            <span class="chip px-4 py-2 rounded-full text-label-sm text-primary">#Kubernetes</span>
           </div>
         </div>
       </div>
@@ -107,42 +225,60 @@
   </section>
 
   <!-- ===== EXPERIENCE ===== -->
-  <section id="experience">
-    <div class="container">
-      <h2 class="section-title">Experiencia</h2>
+  <section id="experience" class="px-6 md:px-16 py-16 md:py-24 bg-surface-container-low">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+        <h2 class="font-headline text-headline-md text-primary">Experiencia</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
+      </div>
+      <div class="relative pl-10">
+        <div class="absolute left-[17px] top-2 bottom-2 w-[2px] timeline-line"></div>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Ene 2023 — Actualidad</div>
-          <div class="timeline-card">
-            <h3>Desarrollador de Proyectos</h3>
-            <p class="timeline-sub">Autodidacta · Freelance</p>
-            <ul class="timeline-list">
-              <li>CRUD con Java + Oracle SQL Developer</li>
-              <li>POS con control de stock y escaneo (Python)</li>
-              <li>Automatización de reportes en PowerApps y SharePoint</li>
-              <li>Servicios web REST y SOAP</li>
-              <li>Pruebas unitarias (JUnit, Mockito)</li>
-              <li>Integración de DB: SQL Server, MySQL, PostgreSQL, H2</li>
-              <li>UI con Apache NetBeans y PySide2</li>
-              <li>CI/CD con Jenkins, Docker, Kubernetes</li>
-              <li>Automatización y Chatbot IA con n8n</li>
-            </ul>
+        <div class="relative mb-10 fade-up">
+          <div class="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-primary glow-primary border-2 border-surface"></div>
+          <span class="text-label-sm text-primary block mb-2">Ene 2023 — Actualidad</span>
+          <div class="neo-card rounded-2xl p-6 md:p-8 neo-card-hover transition-all">
+            <h3 class="font-headline text-headline-sm text-on-surface">Desarrollador de Proyectos</h3>
+            <p class="text-body-sm text-on-surface-variant mb-4">Autodidacta · Freelance</p>
+            <div class="grid md:grid-cols-2 gap-2">
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> CRUD con Java + Oracle SQL Developer
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> POS con stock y escaneo (Python)
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> Automatización en PowerApps y SharePoint
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> Servicios web REST y SOAP
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> Pruebas unitarias (JUnit, Mockito)
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> DB: SQL Server, MySQL, PostgreSQL, H2
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> CI/CD: Jenkins, Docker, Kubernetes
+              </div>
+              <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+                <span class="text-primary mt-1">▹</span> Chatbot IA con n8n
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">2023 — 2025</div>
-          <div class="timeline-card">
-            <h3>Desarrollo de Software</h3>
-            <p class="timeline-sub">Instituto IDAT · Lima, Perú</p>
-            <ul class="timeline-list">
-              <li>Ciclo 6 de 6 — Egresado</li>
-              <li>Formación integral en desarrollo</li>
-              <li>Proyectos académicos con tecnologías modernas</li>
-            </ul>
+        <div class="relative fade-up" style="animation-delay: 0.15s;">
+          <div class="absolute -left-[26px] top-1 w-4 h-4 rounded-full bg-primary glow-primary border-2 border-surface"></div>
+          <span class="text-label-sm text-primary block mb-2">2023 — 2025</span>
+          <div class="neo-card rounded-2xl p-6 md:p-8 neo-card-hover transition-all">
+            <h3 class="font-headline text-headline-sm text-on-surface">Desarrollo de Software</h3>
+            <p class="text-body-sm text-on-surface-variant mb-4">Instituto IDAT · Lima, Perú</p>
+            <div class="flex items-start gap-2 text-body-sm text-on-surface-variant">
+              <span class="text-primary mt-1">▹</span> Ciclo 6 de 6 — Egresado. Formación integral en desarrollo de software.
+            </div>
           </div>
         </div>
       </div>
@@ -150,210 +286,263 @@
   </section>
 
   <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <div class="container">
-      <h2 class="section-title">Habilidades Técnicas</h2>
-
-      <div class="skills-category">
-        <h3 class="cat-title">💻 Lenguajes</h3>
-        <div class="skill-chips">
-          <span class="chip">Java</span>
-          <span class="chip">Python</span>
-          <span class="chip">C#</span>
-          <span class="chip">Kotlin</span>
-          <span class="chip">JavaScript</span>
-          <span class="chip">HTML</span>
-          <span class="chip">CSS</span>
-        </div>
+  <section id="skills" class="px-6 md:px-16 py-16 md:py-24">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="psychology">psychology</span>
+        <h2 class="font-headline text-headline-md text-primary">Habilidades Técnicas</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
       </div>
 
-      <div class="skills-category">
-        <h3 class="cat-title">⚙️ Frameworks y Herramientas</h3>
-        <div class="skill-chips">
-          <span class="chip">Spring Boot</span>
-          <span class="chip">.NET</span>
-          <span class="chip">PySide2</span>
-          <span class="chip">PowerApps</span>
-          <span class="chip">Apache NetBeans</span>
+      <div class="space-y-8">
+        <div>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-4">💻 Lenguajes</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Java</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Python</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">C#</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Kotlin</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">JavaScript</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">HTML/CSS</span>
+          </div>
         </div>
-      </div>
-
-      <div class="skills-category">
-        <h3 class="cat-title">🗄️ Bases de Datos</h3>
-        <div class="skill-chips">
-          <span class="chip">SQL Server</span>
-          <span class="chip">PostgreSQL</span>
-          <span class="chip">MySQL</span>
-          <span class="chip">H2</span>
-          <span class="chip">Oracle SQL</span>
+        <div>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-4">⚙️ Frameworks</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary">Spring Boot</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary">.NET</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary">PySide2</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary">PowerApps</span>
+          </div>
         </div>
-      </div>
-
-      <div class="skills-category">
-        <h3 class="cat-title">🔄 DevOps & Automatización</h3>
-        <div class="skill-chips">
-          <span class="chip highlight-chip">Jenkins</span>
-          <span class="chip highlight-chip">Docker</span>
-          <span class="chip highlight-chip">Kubernetes</span>
-          <span class="chip">Grafana</span>
-          <span class="chip">Prometheus</span>
-          <span class="chip">n8n</span>
-          <span class="chip">Git</span>
-          <span class="chip">Linux (Ubuntu)</span>
+        <div>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-4">🗄️ Bases de Datos</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">SQL Server</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">PostgreSQL</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">MySQL</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">H2</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Oracle SQL</span>
+          </div>
         </div>
-      </div>
-
-      <div class="skills-category">
-        <h3 class="cat-title">☁️ Cloud y Servicios Web</h3>
-        <div class="skill-chips">
-          <span class="chip highlight-chip">Microsoft Azure</span>
-          <span class="chip">REST APIs</span>
-          <span class="chip">SOAP</span>
+        <div>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-4">🔄 DevOps & Automatización</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary bg-primary/5">Jenkins</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary bg-primary/5">Docker</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary bg-primary/5">Kubernetes</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Grafana</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Prometheus</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary bg-primary/5">n8n</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Git</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">Linux</span>
+          </div>
         </div>
-      </div>
-
-      <div class="skills-category">
-        <h3 class="cat-title">🧪 Testing</h3>
-        <div class="skill-chips">
-          <span class="chip">JUnit</span>
-          <span class="chip">Mockito</span>
+        <div>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-4">☁️ Cloud</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-primary bg-primary/5">Microsoft Azure</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">REST APIs</span>
+            <span class="chip px-5 py-2.5 rounded-xl text-body-sm text-on-surface">SOAP</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== COURSES ===== -->
-  <section id="education">
-    <div class="container">
-      <h2 class="section-title">Formación & Cursos</h2>
-
-      <div class="edu-grid">
-        <div class="edu-card">
-          <div class="edu-icon">🎓</div>
-          <h3>Desarrollo de Software</h3>
-          <p>Instituto IDAT · Lima, Perú</p>
-          <span class="edu-badge">2023 — 2025</span>
+  <section id="education" class="px-6 md:px-16 py-16 md:py-24 bg-surface-container-low">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="school">school</span>
+        <h2 class="font-headline text-headline-md text-primary">Formación & Cursos</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="auto_stories">auto_stories</span>
+          <h3 class="font-headline text-body-md text-on-surface">Desarrollo de Software</h3>
+          <p class="text-body-sm text-on-surface-variant">IDAT · Lima, Perú</p>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">2023 — 2025</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">☕</div>
-          <h3>Spring Boot (Java)</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="coffee">coffee</span>
+          <h3 class="font-headline text-body-md text-on-surface">Spring Boot (Java)</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🏗️</div>
-          <h3>POO y MVC</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="architecture">architecture</span>
+          <h3 class="font-headline text-body-md text-on-surface">POO y MVC</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🔗</div>
-          <h3>APIs REST y SOAP</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="api">api</span>
+          <h3 class="font-headline text-body-md text-on-surface">APIs REST y SOAP</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🧪</div>
-          <h3>JUnit & Mockito</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="bug_report">bug_report</span>
+          <h3 class="font-headline text-body-md text-on-surface">JUnit & Mockito</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🐘</div>
-          <h3>SQL Server & PostgreSQL</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="storage">storage</span>
+          <h3 class="font-headline text-body-md text-on-surface">SQL Server & PostgreSQL</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">📊</div>
-          <h3>PowerApps & Power Platform</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="dashboard">dashboard</span>
+          <h3 class="font-headline text-body-md text-on-surface">PowerApps & Power Platform</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🐧</div>
-          <h3>Linux (Ubuntu)</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="penguin">penguin</span>
+          <h3 class="font-headline text-body-md text-on-surface">Linux (Ubuntu)</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">📋</div>
-          <h3>Metodología Scrum</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="assignment">assignment</span>
+          <h3 class="font-headline text-body-md text-on-surface">Metodología Scrum</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">☁️</div>
-          <h3>Microsoft Azure</h3>
-          <span class="edu-badge">Fundamentos</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="cloud">cloud</span>
+          <h3 class="font-headline text-body-md text-on-surface">Microsoft Azure</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Fundamentos</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🌐</div>
-          <h3>CCNAv7: Introduction to Networks</h3>
-          <p>Cisco Networking Academy</p>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="language">language</span>
+          <h3 class="font-headline text-body-md text-on-surface">CCNAv7: Introduction to Networks</h3>
+          <p class="text-body-sm text-on-surface-variant">Cisco Networking Academy</p>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
-        <div class="edu-card">
-          <div class="edu-icon">🤖</div>
-          <h3>Automatizaciones con n8n</h3>
-          <span class="edu-badge">Certificado</span>
+        <div class="neo-card rounded-2xl p-5 text-center neo-card-hover transition-all fade-up">
+          <span class="material-symbols-outlined text-4xl text-primary mb-3" data-icon="smart_toy">smart_toy</span>
+          <h3 class="font-headline text-body-md text-on-surface">Automatizaciones con n8n</h3>
+          <span class="chip inline-block mt-3 px-3 py-1 rounded-full text-label-sm text-primary">Certificado</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== LANGUAGES ===== -->
-  <section id="languages">
-    <div class="container">
-      <h2 class="section-title">Idiomas</h2>
-      <div class="lang-grid">
-        <div class="lang-card">
-          <span class="lang-flag">🇪🇸</span>
-          <h3>Español</h3>
-          <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-          <span class="lang-level">Nativo</span>
+  <section id="languages" class="px-6 md:px-16 py-16 md:py-24">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="translate">translate</span>
+        <h2 class="font-headline text-headline-md text-primary">Idiomas</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="neo-card rounded-2xl p-6 text-center">
+          <span class="text-4xl mb-2 block">🇪🇸</span>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-3">Español</h3>
+          <div class="w-full h-3 neo-sunken rounded-full overflow-hidden">
+            <div class="h-full glow-primary rounded-full" style="width:100%; background: linear-gradient(90deg, #c0c1ff, #8083ff);"></div>
+          </div>
+          <span class="text-label-sm text-on-surface-variant mt-2 block">Nativo</span>
         </div>
-        <div class="lang-card">
-          <span class="lang-flag">🇬🇧</span>
-          <h3>Inglés</h3>
-          <div class="lang-bar"><div class="lang-fill" style="width:55%"></div></div>
-          <span class="lang-level">Intermedio</span>
+        <div class="neo-card rounded-2xl p-6 text-center">
+          <span class="text-4xl mb-2 block">🇬🇧</span>
+          <h3 class="font-headline text-headline-sm text-on-surface mb-3">Inglés</h3>
+          <div class="w-full h-3 neo-sunken rounded-full overflow-hidden">
+            <div class="h-full rounded-full" style="width:55%; background: linear-gradient(90deg, #8083ff, #c0c1ff);"></div>
+          </div>
+          <span class="text-label-sm text-on-surface-variant mt-2 block">Intermedio</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="contact-intro">¿Tienes un proyecto o una oportunidad? Hablemos.</p>
-
-      <div class="contact-grid">
-        <a href="tel:+51953242787" class="contact-card">
-          <span class="c-icon">📞</span>
-          <span class="c-label">Teléfono</span>
-          <span class="c-value">+51 953 242 787</span>
+  <section id="contact" class="px-6 md:px-16 py-16 md:py-24 bg-surface-container-low">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-center gap-3 mb-8">
+        <span class="material-symbols-outlined text-primary" data-icon="alternate_email">alternate_email</span>
+        <h2 class="font-headline text-headline-md text-primary">Contacto</h2>
+        <div class="flex-1 h-px bg-outline-variant/30 ml-4"></div>
+      </div>
+      <p class="text-body-md text-on-surface-variant text-center mb-10">¿Tienes un proyecto o una oportunidad? Hablemos.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="tel:+51953242787" class="neo-card rounded-2xl p-6 text-center neo-card-hover transition-all">
+          <span class="material-symbols-outlined text-3xl text-primary mb-2" data-icon="call">call</span>
+          <p class="text-label-sm text-on-surface-variant uppercase tracking-wide">Teléfono</p>
+          <p class="text-body-sm text-on-surface mt-1">+51 953 242 787</p>
         </a>
-        <a href="mailto:Jeffersonzambranoch_01@outlook.com" class="contact-card">
-          <span class="c-icon">✉️</span>
-          <span class="c-label">Email</span>
-          <span class="c-value">Jeffersonzambranoch_01<br/>@outlook.com</span>
+        <a href="mailto:Jeffersonzambranoch_01@outlook.com" class="neo-card rounded-2xl p-6 text-center neo-card-hover transition-all">
+          <span class="material-symbols-outlined text-3xl text-primary mb-2" data-icon="mail">mail</span>
+          <p class="text-label-sm text-on-surface-variant uppercase tracking-wide">Email</p>
+          <p class="text-body-sm text-on-surface mt-1">@outlook.com</p>
         </a>
-        <a href="#" class="contact-card" id="locationBtn">
-          <span class="c-icon">📍</span>
-          <span class="c-label">Ubicación</span>
-          <span class="c-value">Av Pedro Ruiz Gallo 2991<br/>Ate, Lima · Perú</span>
-        </a>
-        <a href="https://www.linkedin.com/in/jefferson-zambrano-chung-062833256/" target="_blank" rel="noopener" class="contact-card">
-          <span class="c-icon">🔗</span>
-          <span class="c-label">LinkedIn</span>
-          <span class="c-value">Conectar</span>
+        <div class="neo-card rounded-2xl p-6 text-center cursor-pointer neo-card-hover transition-all" id="locationBtn">
+          <span class="material-symbols-outlined text-3xl text-primary mb-2" data-icon="location_on">location_on</span>
+          <p class="text-label-sm text-on-surface-variant uppercase tracking-wide">Ubicación</p>
+          <p class="text-body-sm text-on-surface mt-1">Ate, Lima · Perú</p>
+        </div>
+        <a href="https://www.linkedin.com/in/jefferson-zambrano-chung-062833256/" target="_blank" rel="noopener" class="neo-card rounded-2xl p-6 text-center neo-card-hover transition-all">
+          <span class="material-symbols-outlined text-3xl text-primary mb-2" data-icon="linkedin">linkedin</span>
+          <p class="text-label-sm text-on-surface-variant uppercase tracking-wide">LinkedIn</p>
+          <p class="text-body-sm text-primary mt-1">Conectar</p>
         </a>
       </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="container">
-      <p>Jefferson Alexander Zambrano Chung © <span id="year"></span></p>
-      <p class="footer-tag">Hecho con 🤖 por OpenClaw</p>
+  <footer class="flex flex-col md:flex-row justify-between items-center px-6 md:px-16 py-6 border-t border-outline-variant/20">
+    <p class="text-label-sm text-on-surface-variant">Jefferson Zambrano Chung © <span id="year">2026</span></p>
+    <div class="flex gap-6 mt-2 md:mt-0">
+      <span class="text-label-sm text-on-surface-variant">Diseñado con Stitch AI</span>
+      <span class="text-label-sm text-primary">+ OpenClaw</span>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      mobileMenu.classList.toggle('flex');
+    });
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+      });
+    });
+
+    // Location
+    document.getElementById('locationBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('📍 Av Pedro Ruiz Gallo 2991, Ate, Lima, Perú');
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.opacity = '1';
+          e.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll('.fade-up, .neo-card, .chip').forEach(el => {
+      if (!el.classList.contains('fade-up')) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(15px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      }
+      observer.observe(el);
+    });
+
+    console.log('%c📄 CV — Jefferson Zambrano Chung', 'font-size:18px;font-weight:bold;color:#c0c1ff');
+    console.log('%cDesarrollador DevOps | Diseñado con Stitch AI + OpenClaw', 'font-size:14px;color:#888');
+    console.log('%c🔗 https://github.com/Jefferlol/portfolio-cv', 'font-size:12px');
+  </script>
 </body>
 </html>
